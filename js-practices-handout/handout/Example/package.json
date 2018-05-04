@@ -1,0 +1,21 @@
+{
+  "name": "evolution-of-trust",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "chalk": "^2.3.0",
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "jasmine": "^2.8.0",
+    "jasmine-spec-reporter": "^4.2.1",
+    "mongoose": "^4.13.8",
+    "mongoose-auto-increment": "^5.0.1"
+  }
+}
