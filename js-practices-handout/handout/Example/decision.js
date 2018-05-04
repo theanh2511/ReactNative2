@@ -17,20 +17,11 @@ const decide = (history = []) => {
 
   for (var i = 0; i <= _prev; i++) {
     _countTrue = _countTrue + (history[i].theirs == false ? 1 : 0);
-    if (history[i].theirs == true && history[i].yours == true) {
-      _myPoint = _myPoint + 2;
-      _yrPoint = _yrPoint + 2;
-    } else if (history[i].theirs == false && history[i].yours == true) {
-      _myPoint = _myPoint - 1;
-      _yrPoint = _yrPoint + 3;
-    } else if (history[i].theirs == true && history[i].yours == false) {
-      _myPoint = _myPoint + 3;
-      _yrPoint = _yrPoint - 1;
-    }
   }
   _rate = _countTrue / _prev;
-
-  if (_prev < 50) {
+  if (_prev < 3) {
+    _myChoice = _random_boolean;
+  } else if (_prev < 30 && (history[_prev - 1].theirs == true || history[_prev - 2].theirs == true || history[_prev - 3].theirs == true)) {
     _myChoice = _random_boolean;
   }
   //Case analyze
