@@ -39,7 +39,7 @@ const decide = (history = []) => {
     if (_prevResult == false && _rate >= 0.3) {
       _myChoice = false;
     }
-    console.log(_prev + '->' + _remain + ':' + _rate + '----' + _myPoint + ':' + _yrPoint);
+    // console.log(_prev + '->' + _remain + ':' + _rate + '----' + _myPoint + ':' + _yrPoint);
   }
 
   return _myChoice; // Your code here
