@@ -11,12 +11,12 @@ const decide = (history = []) => {
   var _yrPoint = 0;
 
   var _prevResult = _prev > 0 ? (history[_prev].theirs) : false;
-  var _myChoice = true;
+  var _myChoice = false;
   var _countTrue = 0;
   var _rate = 1;
 
   for (var i = 0; i <= _prev; i++) {
-    _countTrue = _countTrue + (history[i].theirs == true ? 1 : 0);
+    _countTrue = _countTrue + (history[i].theirs == false ? 1 : 0);
     if (history[i].theirs == true && history[i].yours == true) {
       _myPoint = _myPoint + 2;
       _yrPoint = _yrPoint + 2;
@@ -36,10 +36,10 @@ const decide = (history = []) => {
   //Case analyze
   else {
     //choose: False
-    if (_prevResult == false && (_rate >= 0.3 || (history[_prev].theirs == false && history[_prev - 1].theirs == false && history[_prev - 2].theirs == false))) {
-      _myChoice = false;
+    if (_prevResult == false && (_rate > 0.66)) {
+      _myChoice = true;
     }
-    // console.log(_prev + '->' + _remain + ':' + _rate + '----' + _myPoint + ':' + _yrPoint);
+    console.log(_prev + '->' + _remain + ':' + _rate + '----' + _countTrue + '/' + _prev);
 
   }
 
