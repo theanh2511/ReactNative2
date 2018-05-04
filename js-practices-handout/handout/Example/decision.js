@@ -36,10 +36,11 @@ const decide = (history = []) => {
   //Case analyze
   else {
     //choose: False
-    if (_prevResult == false && _rate >= 0.3) {
+    if (_prevResult == false && (_rate >= 0.3 || (history[_prev].theirs == false && history[_prev - 1].theirs == false && history[_prev - 2].theirs == false))) {
       _myChoice = false;
     }
     // console.log(_prev + '->' + _remain + ':' + _rate + '----' + _myPoint + ':' + _yrPoint);
+
   }
 
   return _myChoice; // Your code here
