@@ -36,7 +36,7 @@ const decide = (history = []) => {
   //Case analyze
   else {
     //choose: False
-    if (_prevResult == false && (_rate > 0.66)) {
+    if (_prevResult == false && (_rate > 0.66 || (history[_prev - 1].theirs == true && history[_prev - 2].theirs == true))) {
       _myChoice = true;
     }
     // console.log(_prev + '->' + _remain + ':' + _rate + '----' + _countTrue + '/' + _prev);
