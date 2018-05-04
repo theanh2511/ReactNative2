@@ -33,12 +33,13 @@ const decide = (history = []) => {
       _myChoice = _random_boolean;
     }
 
-    if (history[_prev - 1].theirs == false && history[_prev - 2].theirs == false && history[_prev - 3].theirs == false) {
-      _myChoice = false;
+    if (history[_prev - 1].yours == false && history[_prev - 2].yours == false && history[_prev - 3].yours == false && history[_prev].yours == false) {
+      _myChoice = true;
     }
     // console.log(_prev + '->' + _remain + ':' + _rate + '----' + _countTrue + '/' + _prev);
 
   }
+  // console.log(_myChoice);
   return _myChoice; // Your code here
 }
 
